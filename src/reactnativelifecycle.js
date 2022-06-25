@@ -1,7 +1,7 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {View, Text, Button} from 'react-native';
 
-class ReactNativeLifeCycle extends React.Component {
+class ReactNativeLifeCycle extends Component {
   constructor() {
     super();
     this.state = {

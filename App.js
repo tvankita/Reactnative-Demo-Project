@@ -8,14 +8,15 @@
 //Import libraries
 import React from 'react';
 import {Text} from 'react-native';
-import {Demo} from './src/Demo';
-import ReactNativeLifeCycle from './src/ReactNativeLifeCycle';
+import {Demo} from './src/demo';
+// import {ClassComponent} from './src/ClassComponent';
+// import {ReactNativeLifeCycle} from './src/ReactNativeLifeCycle';
 
 //create a functional component
-const Demo = () => {
-  return <ReactNativeLifeCycle />;
+const App = () => {
+  return <Demo />;
 };
-export default Demo;
+export default App;
 
 // import type {Demo} from 'react';
 // import {
