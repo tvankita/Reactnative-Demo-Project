@@ -1,35 +1,41 @@
-import React from 'react';
+import React, { Component } from 'react';
 import {View, Text, Button} from 'react-native';
 
-class ReactNativeLifeCycle extends Component {
-  constructor() {
+export class ReactNativeLifeCycle extends Component {
+  constructor () {
     super();
     this.state = {
-      data: '',
+      value: '10'
     };
-    console.log('constructor');
+    console.log("constructor");  // for initialization
   }
 
   componentDidMount() {
-    console.log('componentDidMount');
+    console.log('componenrDidMount');  // for API or set data from server
   }
-
+  componentDidCatch() {
+    console.log('componentDidCatch');   // for error 
+  }
   componentDidUpdate() {
-    console.log('componentDidUpdate');
+    console.log('componentDidUpdate');   // after finish rendering 
+  }
+  componentDidUnMount() {
+    console.log('componentDidUnMount');   // for close or back step
   }
   render() {
-    console.log('Render');
+    console.log('render');   // for view of HTML
     return (
       <View>
-        <Text>Life Cycle Methods</Text>
-        <Button
-          title="Upadate"
+        <Text>    10</Text>
+        <Button 
+          title='Click Me'
           onPress={() => {
-            this.setState({data: 'update'});
-          }}
+            this.setState({value: '11'})
+          }}    
         />
       </View>
     );
   }
 }
-export default ReactNativeLifeCycle;
+        
+// export default ReactNativeLifeCycle;

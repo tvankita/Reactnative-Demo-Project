@@ -9,12 +9,12 @@
 import React from 'react';
 import {Text} from 'react-native';
 import {Demo} from './src/demo';
-// import {ClassComponent} from './src/ClassComponent';
-// import {ReactNativeLifeCycle} from './src/ReactNativeLifeCycle';
+import {ClassComponent} from './src/classcomponent';
+import {ReactNativeLifeCycle} from './src/reactnativelifecycle';
 
 //create a functional component
 const App = () => {
-  return <Demo />;
+  return <ClassComponent />;
 };
 export default App;
 

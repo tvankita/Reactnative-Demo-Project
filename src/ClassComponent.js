@@ -1,54 +1,58 @@
-import React from 'react';
-import {Text, View, SafeAreaView, Button, StyleSheet} from 'react-native';
-import PropsUnderstanding from './component/PropsUnderstanding';
+import React, {Component} from 'react';
+import {View, Text, SafeAreaView, Button, StyleSheet} from 'react-native';
+import PropsUnderstanding from '../component/PropsUnderstanding';
 
-class ClassComponent extends Component {
+export class ClassComponent extends Component {
   constructor() {
     super();
     this.state = {
-      myData: 'This is Classcomponent',
+      myData: 'I am Techvoot member',
     };
   }
   render() {
     const data = 'Props in React Native';
     return (
+      // use SafeAreaView for 
       <SafeAreaView style={{backgroundColor: 'green'}}>
-        <Text style={{fontSize: 60, textAlign: 'center'}}>
-          {' '}
-          Hello Techvoot{' '}
-        </Text>
+        {/* use inlineStylesheet */}
+        <Text style={{fontSize: 60, textAlign: 'center'}}> Hello World </Text>
+
+        {/* use alert onclick event */}
 
         <Button
-          onPress={() => alert('Hello Techvoot')}
+          onPress={() => alert('Hello World')}
           title="Click me"
-          backgroundColor="yellow"
+          backgroundColor="red"
         />
 
         <View>
           <PropsUnderstanding data={data} />
         </View>
-        <Text style={[styles.fonts, styles.colors]}>{this.state.myData}</Text>
+
+        {/* use state method for change data */}
 
         <Button
-          title="move from Classcomponent to Demo "
-          onPress={() => this.setState({myData: 'This is changed state'})}
+          title="You are Techvoot member?"
+          onPress={() =>
+            this.setState({myData: 'Yes, You are also Techvoot member'})
+          }
         />
+        <Text style={[styles.fonts, styles.colors]}>{this.state.myData}</Text>
       </SafeAreaView>
     );
   }
 }
 
+//  use StyleSheet Separetely
 const styles = StyleSheet.create({
   colors: {
-    colors: 'red',
+    colors: 'yellow',
     backgroundColor: 'cyan',
   },
 
   fonts: {
     textAlign: 'center',
-    fontSize: 20,
+    fontSize: 35,
     fontWeight: 'bold',
   },
 });
-
-export default ClassComponent;
