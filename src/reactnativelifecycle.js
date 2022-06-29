@@ -7,7 +7,7 @@ export class ReactNativeLifeCycle extends Component {
     this.state = {
       value: '10'
     };
-    console.log("constructor");  // for initialization
+    console.log("constructor");  // use for initialization
   }
 
   componentDidMount() {

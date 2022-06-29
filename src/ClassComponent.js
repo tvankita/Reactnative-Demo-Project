@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, Text, SafeAreaView, Button, StyleSheet} from 'react-native';
+import {View, Text, SafeAreaView, Button, StyleSheet, TextInput} from 'react-native';
 import PropsUnderstanding from '../component/PropsUnderstanding';
 
 export class ClassComponent extends Component {

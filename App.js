@@ -8,13 +8,18 @@
 //Import libraries
 import React from 'react';
 import {Text} from 'react-native';
+import {TextInputDemo} from './src/textinput.js';
+import {FlatListDemo} from './src/flatlist.js';
+import {Activity} from './src/activitiindicator.js';
 import {Demo} from './src/demo';
 import {ClassComponent} from './src/classcomponent';
 import {ReactNativeLifeCycle} from './src/reactnativelifecycle';
+import {BackgroundImageDemo} from './src/backgroundimage.js';
+
 
 //create a functional component
 const App = () => {
-  return <ClassComponent />;
+  return <BackgroundImageDemo />;
 };
 export default App;
 
