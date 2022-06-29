@@ -25,4 +25,4 @@ constructor(props) {
     )
   }
 }
-  ReactDOM.render(<App/>)
+  ReactDOM.render (CheckBoxDemo)
