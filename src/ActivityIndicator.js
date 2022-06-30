@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {ActivityIndicator, View, StyleSheet} from 'react-native';
 // import Spinner from 'react-native-loading-spinner-overlay';
 
-export class Spinner extends Spinner {
+export class ActivityIndicator extends Spinner {
   render() {
     return (
       <View style={[styles.container, styles.horizontal]}>       

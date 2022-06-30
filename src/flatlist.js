@@ -29,7 +29,7 @@ export const FlatListDemo = () => {
             renderItem={({ item }) => (              
               <TouchableOpacity onPress={ () => Alert.alert(item.name)}>
                 <Text style={styles.item}>{item.name}</Text>
-            </TouchableOpacity>
+              </TouchableOpacity>
             )}
         />
         </View>

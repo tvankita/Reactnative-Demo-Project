@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     lineHeight: 84,
     fontWeight: 'bold',
     textAlign: 'center',
-    // backgroundColor: '#000000c0',
+    backgroundColor: '#00000c0',
   },
 });
 
