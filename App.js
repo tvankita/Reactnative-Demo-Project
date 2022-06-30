@@ -8,19 +8,20 @@
 //Import libraries
 import React from 'react';
 import {Text} from 'react-native';
+import SectionListDemo from './src/SectionList.js';
 import FlatListWithImage from './src/FlatListWithImage.js';
-// import {ActivityIndicator} from './src/ActivityIndicator.js';
-// import BackgroundImage from './src/BackgroundImage.js';
-// import {FlatListDemo} from './src/flatlist.js';
-// import {Activity} from './src/ActivitiIndicator.js';
-// import {ClassComponent} from './src/classcomponent';
-// import {ReactNativeLifeCycle} from './src/reactnativelifecycle';
-// import {Demo} from './src/demo';
-// import {TextInputDemo} from './src/textinput.js';
+import {ActivityIndicator} from './src/ActivityIndicator.js';
+import BackgroundImage from './src/BackgroundImage.js';
+import {FlatListDemo} from './src/flatlist.js';
+import {Activity} from './src/ActivitiIndicator.js';
+import {ClassComponent} from './src/classcomponent';
+import {ReactNativeLifeCycle} from './src/reactnativelifecycle';
+import {Demo} from './src/demo';
+import {TextInputDemo} from './src/textinput.js';
 
 //create a functional component
 const App = () => {
-  return <FlatListWithImage />;
+  return <SectionListDemo />;
 };
 export default App;
 
