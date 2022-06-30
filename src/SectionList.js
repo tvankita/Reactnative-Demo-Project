@@ -4,29 +4,34 @@ import {
   StyleSheet,
   View,
   SectionList,
-  Text, 
+  Text, Alert,
+  TouchableOpacity,
   StatusBar,
   ScrollView,
 } from 'react-native';
 
 const DATA = [
     {
-        title: "fruit Juice",
-        data: ["Apple", "Mango", "Pinapple",]
+        title:"fruit Juice",
+        data: ["1. Apple", "2. Mango", "3. Pinapple",]
     },
     {
         title: "Vegitable Juice",
-        data: ["Ginger", "Mint", "Cucumber", "Carrot", "Gourd", "Broccoli"]
+        data: ["1. Ginger", "2. Mint", "3. Cucumber", "4. Carrot", "5. Gourd", "6. Broccoli"]
     },
     {
         title: "Cold Drings",
-        data: ["Pinapple Slice", "Jeera", "Thums Up", "Fanta", "Masala"]
+        data: ["1. Pinapple Slice", "2. Jeera", "3. hums Up", "4. Fanta", "5. Masala"]
     },
 ];  
-
+const pressHandler = (data) => {
+  Alert.alert(data);
+};
 const Item = ({ title }) => (
     <View style={styles.item}>
+    <TouchableOpacity onPress={ () => Alert.alert(Item.data)}>
         <Text style={styles.item}>{title}</Text>
+        </TouchableOpacity>
     </View>
 );
 
@@ -53,19 +58,29 @@ const styles = StyleSheet.create({
     containers: {
         flex: 1,
         marginHorizontal: 16,
+        justifyContent: 'space-around',
     },
     item: {
-        padding: 10,
-        marginvertical: 8,
-        backgroundColor: 'pink',
-        marginBottom: 10,
+      fontSize: 15,        
+      marginLeft: 30,
+      padding: 15,
+      color: '#000',
+      backgroundColor: 'pink',
+      marginBottom: 10,
+      // justifyContent: 'space-between',
+      // textAlign: 'center',
+      // padding: 10,
+      // marginvertical: 8,
+      // backgroundColor: 'pink',
+      // marginRight: 5,
     },
     header: {
-        marginBottom: 20,
-        marginTop: 10,
-        textAlign: 'center',
+        marginLeft: 5,
+        marginBottom: 30,
+        marginTop: 20,
         fontSize: 25,
         backgroundColor: '#fff',
+        // textAlign: 'center',
     },
     title: {
         fontSize: 34,
