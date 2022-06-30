@@ -61,7 +61,9 @@ const styles = StyleSheet.create({
         marginBottom: 10,
     },
     header: {
-        alignItems: 'center',
+        marginBottom: 20,
+        marginTop: 10,
+        textAlign: 'center',
         fontSize: 25,
         backgroundColor: '#fff',
     },
