@@ -12,7 +12,7 @@ import {
 
 const DATA = [
     {
-        title:"fruit Juice",
+        title:"Fruit Juice",
         data: ["1. Apple", "2. Mango", "3. Pinapple",]
     },
     {
@@ -21,7 +21,7 @@ const DATA = [
     },
     {
         title: "Cold Drings",
-        data: ["1. Pinapple Slice", "2. Jeera", "3. hums Up", "4. Fanta", "5. Masala"]
+        data: ["1. Pinapple Slice", "2. Jeera", "3. Thums Up", "4. Fanta", "5. Masala"]
     },
 ];  
 const pressHandler = (data) => {
@@ -46,7 +46,7 @@ class SectionListDemo extends Component {
             keyExtractor={(item) => item}
             renderItem={({ item }) => <Item title={item} />}
             renderSectionHeader={({ section: { title } }) => (
-              <Text style={styles.header}>{title}</Text>
+            <Text style={styles.header}>{title}</Text>
             )}
           />
         </SafeAreaView>
@@ -61,6 +61,7 @@ const styles = StyleSheet.create({
         justifyContent: 'space-around',
     },
     item: {
+      flex: 1,
       fontSize: 15,        
       marginLeft: 30,
       marginRight: 30,
@@ -69,8 +70,8 @@ const styles = StyleSheet.create({
       backgroundColor: 'pink',
       marginBottom: 10,
       // justifyContent: 'center',
-      justifyContent: 'space-between',
-      textAlign: 'center',
+      // justifyContent: 'space-between',
+      // textAlign: 'center',
       // padding: 10,
       // marginvertical: 8,
       // backgroundColor: 'pink',
