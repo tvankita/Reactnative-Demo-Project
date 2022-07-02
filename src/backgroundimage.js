@@ -7,14 +7,12 @@ import {
   StyleSheet,
   Image,
 } from 'react-native';
-// import {Component} from 'react';
 
 const BackgroundImage = () => (
   
     <SafeAreaView style={styles.container}>
       <ImageBackground
         source={require('./MyAssets/island.jpg')}
-        // resizeMode='cover'
         style={styles.image}
         >    
         <Text style={styles.text}>Hello Maldive</Text>
