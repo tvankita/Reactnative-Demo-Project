@@ -8,6 +8,8 @@
 //Import libraries
 import React from 'react';
 import {Text} from 'react-native';
+import useCallbackDemo from './src/useCallback.js';
+import HooksDemo from './src/Hooks.js';
 import CheckBoxDemo from './src/CheckBoxDemo.js';
 import SectionListDemo from './src/SectionList.js';
 import FlatListWithImage from './src/FlatListWithImage.js';
@@ -22,7 +24,7 @@ import {TextInputDemo} from './src/textinput.js';
 
 //create a functional component
 const App = () => {
-  return <CheckBoxDemo />;
+  return <HooksDemo />;
 };
 export default App;
 
