@@ -8,8 +8,10 @@
 //Import libraries
 import React from 'react';
 import {Text} from 'react-native';
+import UseDemoofUi from './src/DemoofUi.js';
+import useLayoutEffectDemo from './src/useCallback.js';
 import UseReducerDemo from './src/useReducer.js';
-import useCallbackDemo from './src/useCallback.js';
+import UseCallbackDemo from './src/useCallback.js';
 import HooksDemo from './src/Hooks.js';
 import CheckBoxDemo from './src/CheckBoxDemo.js';
 import SectionListDemo from './src/SectionList.js';
@@ -25,7 +27,7 @@ import {TextInputDemo} from './src/textinput.js';
 
 //create a functional component
 const App = () => {
-  return <UseReducerDemo />;
+  return <UseCallbackDemo />;
 };
 export default App;
 

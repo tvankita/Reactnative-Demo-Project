@@ -1,11 +1,26 @@
-import React, { useState, useEffect } from "react";
-import { Text, StyleSheet, View, Button, SafeAreaView } from "react-native";
+import React, { useState, useCallback } from 'react'
+import { Button, SafeAreaView, Text } from 'react-native'
 
-const useCallbackDemo = () => {
-    var [count, setCount] = useState(0)
+const UseCallbackDemo = () => {
+	const [age, setAge] = useState(25)
+	const [salary, setSalary] = useState(50000)
+	
+	const increment = useCallback(() => {
+		setAge(age + 1);
+	  }, [age]);
+	const incrementSalary = useCallback(() => {
+		setSalary(salary + 1000)
+	  }, [salary]);
 
-    // const Increment = () => {
-    //     setCount(count +1);
-    //   };
-      
-}
+	  return (
+		<SafeAreaView>
+		<Title> <h2>useCallback Hook</h2> </Title>
+		  <Text>Age: {age}</Text>
+		  <Text>SetSalary: {setSalary}</Text>
+		  <Button onPress={increment}>Increment Age</Button>
+		  <Button onPress={incrementSalary}>Increment Salary</Button>
+		</SafeAreaView>
+	  );
+	};
+
+export default UseCallbackDemo;
