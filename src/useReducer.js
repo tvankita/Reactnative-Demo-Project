@@ -46,8 +46,6 @@ const styles = StyleSheet.create({
         fontSize: 35,
         backgroundColor: 'white',
       },
-    button: {
-    },
 });
 
 export default UseReducerDemo;

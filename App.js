@@ -9,7 +9,7 @@
 import React from 'react';
 import {Text} from 'react-native';
 import UseDemoofUi from './src/DemoofUi.js';
-import useLayoutEffectDemo from './src/useCallback.js';
+import useLayoutEffectDemo from './src/UseLayoutEffect.js';
 import UseReducerDemo from './src/useReducer.js';
 import UseCallbackDemo from './src/useCallback.js';
 import HooksDemo from './src/Hooks.js';
@@ -27,7 +27,7 @@ import {TextInputDemo} from './src/textinput.js';
 
 //create a functional component
 const App = () => {
-  return <UseCallbackDemo />;
+  return <UseDemoofUi />;
 };
 export default App;
 
