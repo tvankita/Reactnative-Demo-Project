@@ -1,36 +1,32 @@
 import React from 'react';
-import {View, Text, Image, Button, StyleSheet, TextInput} from 'react-native';
+import { View, Text, Image, Button, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 const UseDemoofUi = () => {
   return (
     <View style={styles.container}>
-      <View style={styles.view1}>
-        <Image source={require('./MyAssets/Group.png')} style={styles.image} />
+      <View style={styles.groupimg}>
+        <Image source={require('./MyAssets/Group.png')} style={styles.previmage} />
       </View>
       <Image
         source={require('./MyAssets/Maskgroup.png')}
-        style={styles.imagemask}
+        style={styles.maskimagek}
       />
-      <View style={styles.view2}>
-        <Image
-          source={require('./MyAssets/back.png')}
-          style={styles.imageback}
-        />
-        <Text style={styles.text}>Login</Text>
+      <View style={styles.backimg}>
+      <Ionicons style={styles.imageback} name='arrow-back' size={18}/>
+        <Text style={styles.login}>Login</Text>
       </View>
-      <View style={styles.view3}>
-        <Text style={styles.texttitle}> FORGOT PASSWORD </Text>
-        <Text style={styles.textp}>
+      <View style={styles.frogtpass}>
+        <Text style={styles.forget}> FORGOT PASSWORD </Text>
+        <Text style={styles.line}>
           Type your email below and we'll send {'\n'} instruction on how to
           recover your {'\n'} password
         </Text>
           <TextInput style={styles.form} type="text" value='Email' />
-          {/* <TextInput type="submit" value="Send Email" /> */}
         <View style={{ marginVertical: 50 }}>
-          <Button buttonstyle={styles.button}
-          title="Send Email"
-          color={"#062fee"} >
-        </Button>
+        <TouchableOpacity style={styles.sendbutton}>
+        <Text style={styles.email}>Send Email</Text>          
+        </TouchableOpacity>
         </View>
       </View>
     </View>
@@ -42,30 +38,27 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
   },
-  view1: {
+  groupimg: {
     flex: 1,
     backgroundColor: '#062fee',
     alignItems: 'center',
     justifyContent: 'center',
   },
-  view2: {
+  backimg: {
     marginHorizontal: 35,
     flex: 0.5,
     flexDirection: 'row',
-    backgroundColor: '#fff',
   },
-  view3: {
+  frogtpass: {
     marginHorizontal: 35,
     flex: 1.5,
     flexDirection: 'column',
-    backgroundColor: '#fff',
   },
-  image: {
+  previmage: {
     width: '80%',
     height: '60%',
-    marginHorizontal: 50,
   },
-  imagemask: {
+  maskimagek: {
     height: '20%',
     width: '20%',
     position: 'absolute',
@@ -77,12 +70,10 @@ const styles = StyleSheet.create({
   },
   imageback: {
     marginTop: 25,
-    height: 20,
-    width: 20,
     position: 'relative',
-    tintColor: '#062fee',
+    color: '#062fee',
   },
-  text: {
+  login: {
     fontSize: 17,
     fontWeight: 'bold',
     color: '#062fee',
@@ -91,14 +82,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     textDecorationLine: 'underline',
   },
-  texttitle: {
+  forget: {
     fontSize: 20,
     letterSpacing: -0.9,
     fontWeight: '800',
     color: '#101010',
     alignItems: 'center',
   },
-  textp: {
+  line: {
     marginVertical: 15,
     fontSize: 16,
     color: '#cecece',
@@ -111,12 +102,16 @@ const styles = StyleSheet.create({
     borderBottomColor: '#cecece',
     borderBottomWidth: 1,
 },
-  button: {
-    // color: '#062fee',
-    // alignItems: 'center',
-    // paddingVertical: 70,
-    // paddingHorizontal: 70,
-  },
+  email: {
+    justifyContent: 'center',
+    color: '#fff',
+    padding: 10,
+},
+sendbutton: {
+    alignItems: 'center',
+    backgroundColor: '#062fee',
+    padding: 5,    
+},
 });
 
 export default UseDemoofUi;
