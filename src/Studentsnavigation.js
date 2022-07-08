@@ -8,44 +8,28 @@ import {
   StyleSheet,
   TextInput,
   FlatList,
+  TouchableOpacity,
   FlatListItem,
 } from 'react-native';
+// import {StudenList} from './src/StudentList.js';
 import Feather from 'react-native-vector-icons/Feather';
 import AntDesign from 'react-native-vector-icons/AntDesign';
-import {List, ListItem} from 'react-native-elements';
+// import {List, ListItem} from 'react-native-elements';
+
+
 
 const UseStudentsnavigationUi = () => {
-  const UseStudentsnavigationUi = () => {
-    const [Images, setImages] = useState([
-      {
-        name: 'Test Student',
-        src: './MyAssets/student.jpg',
-        key: '1',
-      },
-      {
-        name: 'Jean',
-        src: './MyAssets/student.jpg',
-        key: '2',
-      },
-      {
-        name: 'Test',
-        src: './MyAssets/student.jpg',
-        key: '3',
-      },
-    ]);
-}
-
-  console.log('Images', Images);
-
-  const ItemView = ({Images}) => {
-    return (
-      <View>
-        <Text style={styles.item} onPress={() => getItem(Images)}>
-          {Images.value}
-        </Text>
-      </View>
-    );
-  };
+  // renderSeparator = () => {  
+  //   return (  
+  //       <View  
+  //           style={{  
+  //               height: 1,  
+  //               width: "100%",  
+  //               backgroundColor: "#000",  
+  //           }}  
+  //       />  
+  //   );  
+  // };
 
   return (
     <View style={styles.container}>
@@ -60,42 +44,28 @@ const UseStudentsnavigationUi = () => {
 
       <View style={styles.allstudent}>
         <Text style={styles.alltext}>All Students</Text>
+        <TouchableOpacity style={styles.sendbutton}>
         <AntDesign style={styles.filter} name="filter" size={20} />
+        </TouchableOpacity>
         <Text style={styles.filtertext}> FILTER </Text>
       </View>
 
       <View style={styles.slist}>
-        {/* <Text style={styles.teststudent}>Test Students</Text>
-        <Image source='./MyAssets/student.jpg' style={styles.studentimg} /> */}
-
-        <FlatList
-          showsHorizontalScrollIndicator={false}
-          data={Images}
-          renderItem={({item}) => {
-            console.log('item', item);
-            return (
-              <>
-                <Text style={styles.alltext}>{item.name}</Text>
-                <View style={{height: 50, width: 50}}>
-                {/* <Image source={item.src} style={styles.studentimg} /> */}
-                  {/* <Image
-                    style={{height: '100%', width: '100%'}}
-                    source={{
-                      uri: item.src,
-                    }}
-                    // onPress={() => navigation.navigate('Achievement')}
-                  /> */}
-                </View>
-              </>
-            );
-          }}
-        />
+        
       </View>
 
       <View style={styles.btmnavigation}></View>
     </View>
   );
+
+  getListViewItem = (item) => {  
+    Alert.alert(item.key);  
+  }  
+
 };
+
+
+
 
 const styles = StyleSheet.create({
   container: {
@@ -194,6 +164,11 @@ const styles = StyleSheet.create({
     marginVertical: 5,
     resizeMode: 'contain',
   },
+  sendbutton: {
+    // alignItems: 'center',
+    // backgroundColor: '#062fee',
+    // padding: 5,    
+},
 });
 
 export default UseStudentsnavigationUi;

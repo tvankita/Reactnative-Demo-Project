@@ -9,6 +9,7 @@
 import React from 'react';
 import {Text} from 'react-native';
 import UseStudentsnavigationUi from './src/Studentsnavigation.js';
+import FlatListBasics from './src/StudentList.js';
 import UseDemoofUi from './src/DemoofUi.js';
 import useLayoutEffectDemo from './src/UseLayoutEffect.js';
 import UseReducerDemo from './src/useReducer.js';
@@ -28,7 +29,7 @@ import {TextInputDemo} from './src/textinput.js';
 
 //create a functional component
 const App = () => {
-  return <UseStudentsnavigationUi />;
+  return <FlatListBasics />;
 };
 export default App;
 
