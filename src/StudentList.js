@@ -19,11 +19,22 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 
 const data = [
   {name: 'Johan',key: '1',image: require('./MyAssets/student.jpg'), },
+  {name: 'Rohan',key: '2',image: require('./MyAssets/student.jpg'), },
+  {name: 'Mohan',key: '3',image: require('./MyAssets/student.jpg'), },
+]
+
+var filterData = [
   {name: 'Johan',key: '1',image: require('./MyAssets/student.jpg'), },
-  {name: 'Johan',key: '1',image: require('./MyAssets/student.jpg'), },
+  {name: 'Rohan',key: '2',image: require('./MyAssets/student.jpg'), },
+  {name: 'Mohan',key: '3',image: require('./MyAssets/student.jpg'), },
 ]
 
 export default class FlatListBasics extends Component {
+
+  state = {
+    filterDatas: []
+  };
+
   renderSeparator = () => {
     return (
       <View/>
@@ -34,6 +45,18 @@ export default class FlatListBasics extends Component {
     Alert.alert(item.name);
   };
 
+  handleChange = (textValue)=>{
+    filterData = data.filter(function(item) { 
+      const itemData = item.name ? item.name.toUpperCase() : ''.toUpperCase();
+      const textData = textValue.toUpperCase(); 
+      return itemData.indexOf(textData) > -1;
+    });
+    console.log("newData", filterData);
+    this.setState ({
+      filterDatas: filterData
+    });
+}
+
   render() {
     return (
       <View style={styles.container}>
@@ -42,7 +65,7 @@ export default class FlatListBasics extends Component {
 
           <View style={styles.seachview}>
             <Feather style={styles.search} name="search" size={18} />
-            <TextInput style={styles.form} placeholder="Search" />
+            <TextInput style={styles.form} placeholder="Search" onChangeText={this.handleChange} />
           </View>
         </View>
 
@@ -56,7 +79,7 @@ export default class FlatListBasics extends Component {
 
         <View style={styles.slist}>
           <FlatList
-            data={data}
+            data={filterData}
             renderItem={({item, index, separators}) => (
               <View >
                 <View style={styles.mainlist}>
