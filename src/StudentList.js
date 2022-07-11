@@ -1,12 +1,8 @@
 import React, {Component} from 'react';
 import {
   Image,
-  ScrollView,
-  Button,
   TextInput,
   TouchableOpacity,
-  FlatListItem,
-  AppRegistry,
   FlatList,
   StyleSheet,
   Text,
