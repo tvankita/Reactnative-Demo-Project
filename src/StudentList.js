@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, useState} from 'react';
 import {
   Image,
   TextInput,
@@ -8,27 +8,22 @@ import {
   Text,
   View,
   Alert,
-  TouchableOpacity,
 } from 'react-native';
 import Feather from 'react-native-vector-icons/Feather';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 
-const data = [
-  {name: 'Johan',key: '1',image: require('./MyAssets/student.jpg'), },
-  {name: 'Rohan',key: '2',image: require('./MyAssets/student.jpg'), },
-  {name: 'Mohan',key: '3',image: require('./MyAssets/student.jpg'), },
-]
-
-var filterData = [
-  {name: 'Johan',key: '1',image: require('./MyAssets/student.jpg'), },
-  {name: 'Rohan',key: '2',image: require('./MyAssets/student.jpg'), },
+var data = [
+  {name: 'Deo',key: '1',image: require('./MyAssets/student.jpg'), },
+  {name: 'Rekha',key: '2',image: require('./MyAssets/student.jpg'), },
   {name: 'Mohan',key: '3',image: require('./MyAssets/student.jpg'), },
 ]
 
 export default class FlatListBasics extends Component {
 
+
+
   state = {
-    filterDatas: []
+    filterDatas: data
   };
 
   renderSeparator = () => {
@@ -40,19 +35,18 @@ export default class FlatListBasics extends Component {
   getListViewItem = item => {
     Alert.alert(item.name);
   };
-
+  //handling search action
   handleChange = (textValue)=>{
-    filterData = data.filter(function(item) { 
+    var temp = data.filter(function(item) { 
       const itemData = item.name ? item.name.toUpperCase() : ''.toUpperCase();
       const textData = textValue.toUpperCase(); 
       return itemData.indexOf(textData) > -1;
     });
-    console.log("newData", filterData);
+    console.log("newData", temp);
     this.setState ({
-      filterDatas: filterData
+      filterDatas: temp
     });
 }
-
   render() {
     return (
       <View style={styles.container}>
@@ -75,7 +69,7 @@ export default class FlatListBasics extends Component {
 
         <View style={styles.slist}>
           <FlatList
-            data={filterData}
+            data={this.state.filterDatas}
             renderItem={({item, index, separators}) => (
               <View >
                 <View style={styles.mainlist}>
@@ -233,6 +227,5 @@ const styles = StyleSheet.create({
     fontcolor: '#000',
     fontFamily: 'popins',
     paddingTop: 90,
-  },
-  
+  },  
 });
