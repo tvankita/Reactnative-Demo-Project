@@ -8,7 +8,6 @@
 //Import libraries
 import React from 'react';
 import {Text} from 'react-native';
-import UseStudentsnavigationUi from './src/Studentsnavigation.js';
 import FlatListBasics from './src/StudentList.js';
 import UseDemoofUi from './src/DemoofUi.js';
 import useLayoutEffectDemo from './src/UseLayoutEffect.js';
