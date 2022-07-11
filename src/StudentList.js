@@ -19,9 +19,6 @@ var data = [
 ]
 
 export default class FlatListBasics extends Component {
-
-
-
   state = {
     filterDatas: data
   };
