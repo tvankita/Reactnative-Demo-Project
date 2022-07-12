@@ -22,12 +22,6 @@ export default class FlatListBasics extends Component {
   state = {
     filterDatas: data
   };
-
-  renderSeparator = () => {
-    return (
-      <View/>
-    );
-  };
   //handling onPress action
   getListViewItem = item => {
     Alert.alert(item.name);
@@ -63,47 +57,27 @@ export default class FlatListBasics extends Component {
             <Text style={styles.filterText}> FILTER </Text>
           </TouchableOpacity>
         </View>
-
-        <View style={styles.slist}>
           <FlatList
             data={this.state.filterDatas}
             renderItem={({item, index, separators}) => (
-              <View >
-                <View style={styles.mainlist}>
-                    
+                <View style={styles.mainlist}>                    
                     <TouchableOpacity style={styles.touch}>
-                      <Image source={item.image} style={styles.image} />                    
-
-                      <Text
-                        style={styles.item}
-                        onPress={this.getListViewItem.bind(this, item)}>
-                        {item.name}
-                      </Text>
+                      <Image source={item.image} style={styles.image} />                 
+                      <Text style={styles.item} onPress={this.getListViewItem.bind(this, item)}>{item.name}</Text>
                       <AntDesign style={styles.arrowRight} name="right" size={17} />
                     </TouchableOpacity>
                   <View style={styles.calendar}>
-                    <AntDesign
-                      style={styles.calendarimg}
-                      name="calendar"
-                      size={17}
-                    />
-                    <Text style={styles.calendartxt}>                     
-                      Last Point Recived on July 03
-                    </Text>
+                    <AntDesign style={styles.calendarimg} name="calendar" size={17} />
+                    <Text style={styles.calendartxt}> Last Point Recived on July 03 </Text>
                   </View>
                 </View>
-              </View>
-            )}
-            ItemSeparatorComponent={this.renderSeparator}
+            )}            
           />
-        </View>
-
         <View style={styles.btmnavigation}></View>
       </View>
     );
   }
 }
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -166,10 +140,6 @@ const styles = StyleSheet.create({
     color: '#000',
     fontSize: 13,
     letterSpacing: 1.4,
-  },
-  slist: {
-    marginHorizontal: 35,
-    margin: 15,
   },
   mainlist: {
     marginBottom: 15,
