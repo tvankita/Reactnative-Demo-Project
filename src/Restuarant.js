@@ -12,54 +12,75 @@ import Feather from 'react-native-vector-icons/Feather';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 
 function RestuarantDemo() {
+  const [selecetdeIndex, setselectedIndex] = useState();
   const [hoteldata, setHoteldata] = useState([
-    {name: 'Pine Hill \n Green Caban', key: '1', image: require('./MyAssets/GuestHouse.jpg'), date: 'Jan 03-05', prize: '$55', },
-    {name: 'Pine Hill \n Green Caban', key: '2', image: require('./MyAssets/HillStation.png'), date: 'Jan 04-05', prize: '$55', },
-    {name: 'Pine Hill \n Green Caban', key: '3', image: require('./MyAssets/GuestHouse.jpg'), date: 'Jan 04-05', prize: '$55', },
-    {name: 'Pine Hill \n Green Caban', key: '4', image: require('./MyAssets/HillStation.png'), date: 'Jan 05-05', prize: '$55', },
+    {
+      name: 'Pine Hill \n Green Caban',
+      key: '1',
+      image: require('./MyAssets/GuestHouse.jpg'),
+      date: 'Jan 03-05',
+      prize: '$55',
+    },
+    {
+      name: 'Pine Hill \n Green Caban',
+      key: '2',
+      image: require('./MyAssets/HillStation.png'),
+      date: 'Jan 04-05',
+      prize: '$55',
+    },
+    {
+      name: 'Pine Hill \n Green Caban',
+      key: '3',
+      image: require('./MyAssets/GuestHouse.jpg'),
+      date: 'Jan 04-05',
+      prize: '$55',
+    },
+    {
+      name: 'Pine Hill \n Green Caban',
+      key: '4',
+      image: require('./MyAssets/HillStation.png'),
+      date: 'Jan 05-05',
+      prize: '$55',
+    },
   ]);
 
   return (
     <View style={styles.container}>
-    <View style={styles.flatList}>
-    <TouchableOpacity style={styles.touch}>
-    <FlatList 
-    data={hoteldata}
-      renderItem={({item, index}) => (
-        <View style={styles.cardview}>
-        <View style={styles.mainlist}>
-        <View style={styles.listitem}>         
-        <Image source={item.image} style={styles.image} />
-        </View>
-        <View style={styles.namedate}> 
-        <View style={styles.itemname}>
-        <Text style={styles.item}> {item.name} </Text>
-        <Text style={styles.date}>{item.date}</Text>
-        </View>
-        <View style={styles.secondlist}>
-        <Text style={styles.prize}>{item.prize}</Text>
-        {/* </View> */}
-        <View style={styles.calendar}>
-          <AntDesign style={styles.calendarimg} name="calendar" size={12} />
-           <Text style={styles.calendartxt}> Shown in calender </Text>
-         </View>
-         </View>
-         </View>
-        </View>
-        <View>
-      <TouchableOpacity>
-        <View style={styles.reservation}>
-        <Text style={styles.write}>Gerer reservation</Text>
-        </View>
-      </TouchableOpacity>
+      <Text style={styles.heading}>Reservations (Janvier)</Text>
+          <FlatList
+            data={hoteldata}
+            renderItem={({item, index}) => {
+              return (
+                <View style={styles.cardview}>
+                  <View style={styles.mainlist}>
+                      <Image source={item.image} style={styles.image} />
+                    <View style={styles.namedate}>
+                      <View style={styles.itemname}>
+                        <Text style={styles.item}> {item.name} </Text>
+                        <Text style={styles.date}>{item.date}</Text>
+                      </View>
+                      <View style={styles.itemname}>
+                        <Text style={styles.prize}>{item.prize}</Text>
+                       <TouchableOpacity style={[ styles.calendar, 
+                           {backgroundColor: index === selecetdeIndex  ? '#000000' : '#ffd700',
+                            },
+                          ]}
+                          onPress={() => setselectedIndex(index)}>
+                          <AntDesign name="calendar" color={index === selecetdeIndex  ? '#fff' : '#000'} size={12}/>
+                          <Text style={index===selecetdeIndex?styles.calendartxttwo:styles.calendartxt}>Shown in calender </Text>
+                        </TouchableOpacity>
+                      </View>
+                    </View>
+                  </View>
+                    <TouchableOpacity style={styles.reservation}>
+                        <Text style={styles.write}>Gerer reservation</Text>
+                    </TouchableOpacity>
+                </View>
+              );
+            }}
+          />
     </View>
-        </View>
-      )}      
-     />
-    </TouchableOpacity>
-    </View>
-    </View>
-  )
+  );
 }
 
 const styles = StyleSheet.create({
@@ -68,87 +89,77 @@ const styles = StyleSheet.create({
     backgroundColor: '#f9f9f9',
     paddingHorizontal: 24,
     marginTop: 20,
-  }, 
+  },
+  heading: {
+    color: '#000',
+    fontSize: 12,
+    paddingBottom: 5,
+  },
   cardview: {
-    flexDirection: 'column',
-    marginBottom: 15,
+    marginBottom: 10,
     padding: 10,
-    paddingHorizontal: 10,
     backgroundColor: '#fff',
     borderRadius: 20,
-  },  
-  flatList: {
-    flexDirection: 'row',
-  },
-  touch: {
-    flexDirection: 'row',
   },  
   mainlist: {
     flexDirection: 'row',
   },
-  listitem: {
-    flexDirection: 'row',
-  },  
   image: {
-    width: "50%",
-    height: "90%",
+    width: '25%',
+    height: '100%',
     borderRadius: 10,
     resizeMode: 'cover',
   },
   namedate: {
-    marginRight: 60,
-    marginLeft: -60,
-    flexDirection: 'column',
+    marginLeft:  11,
   },
   itemname: {
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
   item: {
+    marginRight: 27,
     fontSize: 14,
-    height: 70,
+    width: "50%",
     fontWeight: '500',
     color: '#000',
   },
   date: {
-    fontSize: 12, 
-  },
-  secondlist: {
-    flexDirection: 'row',  
+    fontSize: 12,
   },
   prize: {
-    marginTop: -25,
+     width: ' 30%',
+    marginLeft: 4,
     fontSize: 14,
     color: '#000',
   },
   calendar: {
-    marginTop: -25,
+    marginBottom: 8,
     flexDirection: 'row',
-    backgroundColor: '#ffd700',
-    borderRadius: 10,
+    borderRadius: 16,
     alignItems: 'center',
-    marginLeft: 88,
-    paddingHorizontal: 10,
-  },
-  calendarimg: {
-    color: '#000',
-    marginLeft: -4,
+    padding: 5,
   },
   calendartxt: {
     fontSize: 10,
-  }, 
+    color: '#000',
+  },
+  calendartxttwo: {
+    fontSize: 10,
+    color: '#fff',
+  },
   reservation: {
     borderColor: '#000',
     borderWidth: 1,
     borderRadius: 10,
-    padding: 15,
+    padding: 12,
     marginTop: 10,
   },
   write: {
     textAlign: 'center',
     color: '#000',
     fontSize: 14,
-  },  
+  },
 });
 
 export default RestuarantDemo;
