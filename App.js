@@ -29,7 +29,7 @@ import {TextInputDemo} from './src/textinput.js';
 
 //create a functional component
 const App = () => {
-  return <FlatListBasics />;
+  return <RestuarantDemo />;
 };
 export default App;
 
