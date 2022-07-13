@@ -128,7 +128,7 @@ const styles = StyleSheet.create({
     fontSize: 12,
   },
   prize: {
-     width: ' 30%',
+    width: '30%',
     marginLeft: 4,
     fontSize: 14,
     color: '#000',
