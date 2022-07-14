@@ -1,6 +1,5 @@
 import React from 'react';
-import {View, Text, StyleSheet, BUtton, TouchableOpacity, Button} from 'react-native';
-import { Navigation} from '@react-navigation/native';
+import {View, Text, StyleSheet, Button} from 'react-native';
 
 const HomePage = ({navigation}) => {
     return (
@@ -12,8 +11,12 @@ const HomePage = ({navigation}) => {
             <Button style={style.buttonpress} title='Go To Shop Page'
                 onPress={() => navigation.replace('ShopPage')}
             />
+            <Button
+            title="Go To Contact Page"
+            onPress={() => navigation.push('ContactPage')}
+          />
         </View>
-    )
+    );
 }
 
 const style = StyleSheet.create ({
@@ -26,7 +29,7 @@ const style = StyleSheet.create ({
         textAlign: 'center',
     },
     buttonpress: {
-        marginBottom: 5,
+        paddingBottom: 20,
     },
 });
 

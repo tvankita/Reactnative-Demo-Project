@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, Button, TouchbleOpacity, StyleSheet} from 'react-native';
+import {View, Text, Button, StyleSheet} from 'react-native';
 
 const ShopPage = ({navigation}) => {
   return (
@@ -7,22 +7,27 @@ const ShopPage = ({navigation}) => {
       <Text style={style.txtstyle}>Wellcome in Our Shop</Text>
       <Button
         style={style.buttonpress}
-        onpress={() => navigation.replace('HomePage')}
+        onPress={() => navigation.replace('HomePage')}
         title="Go TO Home Page"
       />
       <Button
         style={style.buttonpress}
-        onpress={() => navigation.push('AboutPage')}
+        onPress={() => navigation.navigate('ContactPage')}
+        title="Go TO Contact Page"
+      />
+      <Button
+        style={style.buttonpress}
+        onPress={() => navigation.push('AboutPage')}
         title="Go TO About Page"
       />
       <Button
+        title="Go Back"
         style={style.buttonpress}
-        onpress={() => navigation.goBack('HomePage')}
-        title="Go TO Home Page"
+        onPress={() => navigation.goBack()}
       />
-      <TouchbleOpacity onpress={() => navigation.goBack()}>
+      <TouchableOpacity onPress={() => navigation.goBack()}>
         <Text>"Go TO About Page"</Text>
-      </TouchbleOpacity>
+      </TouchableOpacity>
     </View>
   );
 };
@@ -32,12 +37,13 @@ const style = StyleSheet.create({
     justifyContent: 'center',
   },
   txtstyle: {
-    alignItem: 'center',
     fontSize: 25,
-    color: '#cfcd',
+    color: '#000',
+    textAlign: 'center',
   },
   buttonpress: {
     marginBottom: 5,
   },
 });
+
 export default ShopPage;

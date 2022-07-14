@@ -8,6 +8,8 @@
 // Import libraries
 import React from 'react';
 import {Text} from 'react-native';
+import 'react-native-gesture-handler';
+import NavDrawer from './src/DrawerNav.js';
 import StackNavigationDemo from './src/StackNavigation.js';
 import RestuarantDemo from './src/Restuarant.js';
 import FlatListBasics from './src/StudentList.js';
@@ -30,7 +32,7 @@ import {TextInputDemo} from './src/textinput.js';
 
 //create a functional component
 const App = () => {
-  return <StackNavigationDemo />;
+  return <NavDrawer />;
 };
 export default App;
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, Button, TouchbleOpacity, StyleSheet} from 'react-native';
+import {View, Text, Button, StyleSheet} from 'react-native';
 
 const ContactPage = ({navigation}) => {
   return (
@@ -7,22 +7,19 @@ const ContactPage = ({navigation}) => {
       <Text style={style.txtstyle}>Hello Techvoot Family</Text>
       <Button
         style={style.buttonpress}
-        onpress={() => navigation.popToTop('HomePage')}
+        onPress={() => navigation.popToTop('HomePage')}
         title="Go TO Home Page"
       />
       <Button
         style={style.buttonpress}
-        onpress={() => navigation.push('AboutPage')}
+        onPress={() => navigation.navigate('AboutPage')}
         title="Go TO About Page"
       />
       <Button
         style={style.buttonpress}
-        onpress={() => navigation.goBack('ShopPage')}
-        title="Go TO Shop Page"
+        onPress={() => navigation.goBack()}
+        title="Go TO Home Page"
       />
-      <TouchbleOpacity onpress={() => navigation.goBack()}>
-        <Text>"Go TO About Page"</Text>
-      </TouchbleOpacity>
     </View>
   );
 };
@@ -32,9 +29,9 @@ const style = StyleSheet.create({
     justifyContent: 'center',
   },
   txtstyle: {
-    alignItem: 'center',
+    textAlign: 'center',
     fontSize: 25,
-    color: '#cfcd',
+    color: '#000',
   },
   buttonpress: {
     marginBottom: 5,
