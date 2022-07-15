@@ -1,6 +1,5 @@
 import React from 'react';
-import { Button, View, Text, StyleSheet, SafeAreaView } from 'react-native';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import { Button, View, Text, StyleSheet, SafeAreaView, TouchableOpacity} from 'react-native';
 
 const Shop = ({ navigation }) => {
     return (

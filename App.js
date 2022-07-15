@@ -9,6 +9,9 @@
 import React from 'react';
 import {Text} from 'react-native';
 import 'react-native-gesture-handler';
+import TopTabBar from './src/MaterialTopTabBar'
+import NavMaterialBottom from './src/MaterialTabBottom.js';
+import NavBottom from './src/NavBottom.js';
 import NavDrawer from './src/DrawerNav.js';
 import StackNavigationDemo from './src/StackNavigation.js';
 import RestuarantDemo from './src/Restuarant.js';
@@ -32,10 +35,9 @@ import {TextInputDemo} from './src/textinput.js';
 
 //create a functional component
 const App = () => {
-  return <NavDrawer />;
+  return <NavBottom />;
 };
 export default App;
-
 
 
 

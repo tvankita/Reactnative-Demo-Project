@@ -32,8 +32,7 @@ const NavDrawer = () => {
           name="About"
           component={About}
           options={{
-            drawerIcon: ({color}) => (
-              <FontAwesome name="slideshare" size={22} />
+            drawerIcon: ({color}) => ( <FontAwesome name="slideshare" size={22} />
             ),
           }}
         />
