@@ -15,14 +15,14 @@ const TopTabBar = () => {
         initialRouteName="Home"
         screenOptions={{
           tabBarStyle: {backgroundColor: '#009387'},
-          tabBarItemStyle: {width: 100, height: 100, position: 'relative'},
+          tabBarItemStyle: { position: 'relative'},
         }}
         tabBarPosition="top">
         <Tab.Screen
           name="Home"
           component={HomeScreen}
           options={{
-            tabBarIcon: () => <AntDesign name="home" color="black" size={25} />,
+            tabBarIcon: () => <AntDesign name="home" color="black" size={20} />,
           }}
         />
         <Tab.Screen
@@ -30,16 +30,16 @@ const TopTabBar = () => {
           component={AboutScreen}
           options={{
             tabBarIcon: () => (
-              <AntDesign name="user" color="black" size={25} />
+              <AntDesign name="user" color="black" size={20} />
             ),
           }}
         />
         <Tab.Screen
-          name="ContactScreen"
+          name="Contact"
           component={ContactScreen}
           options={{
             tabBarIcon: () => (
-              <AntDesign name="phone" color="black" size={25} />
+              <AntDesign name="phone" color="black" size={20} />
             ),
           }}
         />

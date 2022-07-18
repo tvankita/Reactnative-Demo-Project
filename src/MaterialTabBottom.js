@@ -9,6 +9,8 @@ export default function DrawerNavigation () {
         <NavigationContainer>
             <Drawer.Navigator initialRouteName="HomeScreen">
               <Drawer.Screen component={NavMaterialBottom} name="HomeScreen" />
+              <Drawer.Screen component={NavMaterialBottom} name="AboutScreen" />
+              <Drawer.Screen component={NavMaterialBottom} name="ContactScreen" />
             </Drawer.Navigator>
         </NavigationContainer>
     );
