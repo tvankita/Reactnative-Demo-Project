@@ -9,6 +9,8 @@
 import 'react-native-gesture-handler';
 import React from 'react';
 import {Text, View} from 'react-native';
+import DeleteMethod from './src/AxiosGet.js';
+import AxiosGetApi from './src/AxiosGet.js';
 import FetchApi from './src/FetchApi.js';
 import TopTabBar from './src/MaterialTopTabBar';
 import NavMaterialBottom from './src/MaterialTabBottom.js';
@@ -36,7 +38,7 @@ import {TextInputDemo} from './src/textinput.js';
 
 //create a functional component
 const App = () => {
-  return <FetchApi />;
+  return <AxiosGetApi />;
   };
 export default App;
 

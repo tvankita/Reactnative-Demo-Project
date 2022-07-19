@@ -33,7 +33,7 @@ class FetchApi extends React.Component {
 }
 
 const style = StyleSheet.create({
-    container: {
+    container: {  
         backgroundColor: '#cdcdcd',
     },
     header: {
