@@ -9,7 +9,9 @@
 import 'react-native-gesture-handler';
 import React from 'react';
 import {Text, View} from 'react-native';
-import DeleteMethod from './src/AxiosGet.js';
+import FoodRestDemo from './src/FoodRestDemo.js';
+import PostMethod from './src/PostMethod.js';
+import FetchImage from './src/FetchwithImage.js';
 import AxiosGetApi from './src/AxiosGet.js';
 import FetchApi from './src/FetchApi.js';
 import TopTabBar from './src/MaterialTopTabBar';
@@ -38,7 +40,7 @@ import {TextInputDemo} from './src/textinput.js';
 
 //create a functional component
 const App = () => {
-  return <AxiosGetApi />;
+  return <PostMethod />;
   };
 export default App;
 
