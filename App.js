@@ -40,7 +40,7 @@ import {TextInputDemo} from './src/textinput.js';
 
 //create a functional component
 const App = () => {
-  return <PostMethod />;
+  return <FoodRestDemo />;
   };
 export default App;
 
