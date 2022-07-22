@@ -8,10 +8,12 @@ const HomePage = ({navigation}) => {
             <Button style={style.buttonpress} title='Go To Food Page'
                 onPress={() => navigation.navigate('FoodMenuDemo')}
             />
+            <Button style={style.buttonpress} title='Go To Hotel Room'
+                onPress={() => navigation.navigate('HotelRoomDemo')}
+            />
         </View>
     );
 }
-
 const style = StyleSheet.create ({
     container: {
         flex: 1,

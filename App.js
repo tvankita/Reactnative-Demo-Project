@@ -9,6 +9,7 @@
 import 'react-native-gesture-handler';
 import React from 'react';
 import {Text, View} from 'react-native';
+import HotelRoomDemo from './src/FoodRestDemo.js';
 import FoodRestDemo from './src/FoodRestDemo.js';
 import PostMethod from './src/PostMethod.js';
 import FetchImage from './src/FetchwithImage.js';
@@ -40,7 +41,7 @@ import {TextInputDemo} from './src/textinput.js';
 
 //create a functional component
 const App = () => {
-  return <FoodRestDemo />;
+  return <HotelRoomDemo />;
   };
 export default App;
 
